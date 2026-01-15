@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { ai } from "../../../ai/genkit";
+import { ai } from "./genkit";
 
 export async function POST(req: Request) {
   try {
