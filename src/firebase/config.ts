@@ -1,14 +1,19 @@
-import { initializeApp, getApps, getApp } from "firebase/app";
+import { initializeApp } from "firebase/app";
+import { getAuth, GoogleAuthProvider, signInWithRedirect, getRedirectResult } from "firebase/auth";
 
-export const firebaseConfig = {
-  apiKey: "AIzaSyDNbLStyrhRZ5bykdh3zRk70emK63mdB8A",
-  authDomain: "studio-8785153620-4e332.firebaseapp.com",
-  projectId: "studio-8785153620-4e332",
-  storageBucket: "studio-8785153620-4e332.appspot.com",
-  messagingSenderId: "371700283438",
-  appId: "1:371700283438:web:2f2471b1011c93b8a874bf",
-  measurementId: "371700283438"
+// 1️⃣ تهيئة Firebase
+const firebaseConfig = {
+  apiKey: "API_KEY",
+  authDomain: "PROJECT_ID.firebaseapp.com",
+  projectId: "PROJECT_ID",
+  storageBucket: "PROJECT_ID.appspot.com",
+  messagingSenderId: "SENDER_ID",
+  appId: "APP_ID",
+  measurementId: "G-MEASUREMENT_ID"
 };
 
-export const firebaseApp =
-  getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
+const app = initializeApp(firebaseConfig);
+
+// 2️⃣ تهيئة Auth
+const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
