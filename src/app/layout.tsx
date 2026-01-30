@@ -11,6 +11,7 @@ import { LocalizationProvider } from '@/components/layout/localization-provider'
 import { ThemeProvider } from '@/components/layout/theme-provider';
 import { PowerProvider } from '@/hooks/use-power-system';
 import { AdsProvider } from '@/components/ads/ads-provider';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 
 export const metadata: Metadata = {
@@ -70,6 +71,7 @@ export default function RootLayout({
               </FirebaseClientProvider>
             </LocalizationProvider>
             <Toaster />
+            <SpeedInsights />
           </ThemeProvider>
         </body>
       </html>
